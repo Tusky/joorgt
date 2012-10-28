@@ -1,10 +1,19 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="main.js"></script>
+<script src="skills.js"></script>
+<script src="unit.js"></script>
+<script src="equipment.js"></script>
+<script src="inventory.js"></script>
+<script src="display.js"></script>
 <style>
 	.enemy{ color: red }
 	.player{ color: green }
+	input[type="submit"]{ width: 110px }
+	#equipment, #inventory{ clear: both; float: right; display: block; border: 1px black solid; width: 100px; height: 20px; }
 </style>
 <div id="game">
+	<div id="equipment"></div>
+	<div id="inventory"></div>
 	<div id="timer"></div>
 	<div id="debugbar"></div>
 	<b>Player: </b><br />
@@ -14,8 +23,8 @@
 	<b>Enemy: </b><br />
 		HP: <span id="enemyhp"></span><br />
 		MP: <span id="enemymana"></span><br />
-	<input type="submit" id="slotone" value="Fight" />
-	<input type="submit" id="slottwo" value="Fight" />
-	<input type="submit" id="slotthree" value="Fight" />
+	<input type="submit" id="slotone" class="skill" value="Fight" />
+	<input type="submit" id="slottwo" class="skill" value="Fight" />
+	<input type="submit" id="slotthree" class="skill" value="Fight" />
 	<div id="console_log"></div>
 </div>
