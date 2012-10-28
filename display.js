@@ -1,9 +1,12 @@
 function battlelog(who, what, whom, dmg, that){
-	if( who == whom ){
-		$("#console_log").html('<span class="player">'+who+'</span> used '+what+' on <span class="player">self</span> gaining <b>'+dmg+'</b>' + '<br />' + $("#console_log").html())
-	}else{
-		$("#console_log").html('<span class="player">'+who+'</span> used '+what+' on <span class="enemy">'+whom+'</span> for <b>'+dmg+'</b> damage' + '<br />' + $("#console_log").html())
-	}
+	if( whom == player.return_name() && who == whom ){ whom = '<span class="player">self</span>'
+	}else if( whom == player.return_name() ){ whom = '<span class="player">'+whom+'</span>'
+	}else{ whom = '<span class="enemy">'+whom+'</span>' }
+
+	if(who == player.return_name()){ who = '<span class="player">'+who+'</span>'
+	}else{ who = '<span class="enemy">'+who+'</span>' }
+
+	$("#console_log").html(who+' used '+what+' on '+whom+' gaining <b>'+dmg+'</b>' + '<br />' + $("#console_log").html())
 }
 
 function checkifstillalive(){
@@ -25,4 +28,5 @@ function displayInfo(){
 	$('#playermana').text(player.current_manapool())
 	$('#enemyhp').text(enemy.current_health())
 	$('#enemymana').text(enemy.current_manapool())
+	doCooldownDisables()
 }
