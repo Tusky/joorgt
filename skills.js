@@ -1,19 +1,20 @@
-function Skills(name,dmg,buff,timer,cd,target){
+function Skills(name,dmg,buff,timer,cd,target,img){
 	this.name = name
 	this.dmg = dmg
 	this.buff = buff
 	this.timer = timer
 	this.cd = cd
 	this.target = target
+	this.imageurl = img
 
 	this.return_name = function(){ return this.name }
 	this.use_buff = function(){  }
 }
 
 function createSkills(){
-	this.rake = new Skills("Scratch", 1.2, 0, 0, 2, "enemy")
-	this.agibuff = new Skills("Agility Buff", 0, "Agility+10", 30, 0, "self")
-	this.def = new Skills("Defensive Pose", 0, "Strength+10", 30, 0, "self")
+	this.rake = new Skills("Scratch", 1.2, 0, 0, 2, "enemy", "scratch.png")
+	this.agibuff = new Skills("Agility Buff", 0, "Agility+10", 30, 0, "self", "agibuff.png")
+	this.def = new Skills("Defensive Pose", 0, "Strength+10", 30, 0, "self", "defensivepose.png")
 }
 
 function disableActionButton(slot){
@@ -32,7 +33,7 @@ function disableActionButton(slot){
 	}
 	setTimeout(function(){
 		window.clearInterval(cdi[slot])
-		$("#"+slot).removeClass('on_cooldown').css("color","black").val(action.name);
+		$("#"+slot).removeClass('on_cooldown').css("color","black").val(' ');
 	}, action.cd*1000)
 }
 

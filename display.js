@@ -16,9 +16,9 @@ function checkifstillalive(){
 }
 
 function setupScreen(){
-	$('#slotone').val(player.slotone.name)
-	$('#slottwo').val(player.slottwo.name)
-	$('#slotthree').val(player.slotthree.name)
+	$('#slotone').attr("style", "background: url(icons/"+player.slotone.imageurl+'); background-size:50px;').attr("title", player.slotone.name)
+	$('#slottwo').attr("style", "background: url(icons/"+player.slottwo.imageurl+'); background-size:50px;').attr("title", player.slottwo.name)
+	$('#slotthree').attr("style", "background: url(icons/"+player.slotthree.imageurl+'); background-size:50px;').attr("title", player.slotthree.name)
 	displayInfo()
 }
 

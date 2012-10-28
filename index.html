@@ -8,7 +8,8 @@
 <style>
 	.enemy{ color: red }
 	.player{ color: green }
-	input[type="submit"]{ width: 110px;color: black; }
+	input[type="button"]{ width: 50px; height: 50px; padding: 5px; position: relative;}
+	.on_cooldown, .on_gcd { opacity: 0.7; } 
 	#equipment, #inventory{ clear: both; float: right; display: block; border: 1px black solid; width: 100px; height: 20px; }
 </style>
 <div id="game">
@@ -23,8 +24,7 @@
 	<b>Enemy: </b><br />
 		HP: <span id="enemyhp"></span><br />
 		MP: <span id="enemymana"></span><br />
-	<input type="submit" id="slotone" class="skill" value="Fight" />
-	<input type="submit" id="slottwo" class="skill" value="Fight" />
-	<input type="submit" id="slotthree" class="skill" value="Fight" />
-	<div id="console_log"></div>
+	<input type="button" id="slotone" class="skill" value=" " />
+	<input type="button" id="slottwo" class="skill" value=" " />
+	<input type="button" id="slotthree" class="skill" value=" " />
 </div>
